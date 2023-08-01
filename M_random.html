@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bg">
+    <h1 id="head">
+        GENERATING RANDOM COLORS
+    </h1>
+    <br/>
+    <button id="change">change color</button>
+    <br/>
+    <br/>
+    <button id="stop">Stop color change</button>
+    <script>
+         const randomColor = function(){
+            const hex = "0123456789ABCDEF";
+            let color ='#';
+            for(let i = 0; i<6 ;i++ ){
+               color += hex[parseInt(Math.random()* 16)];
+            }
+            return color
+         };
+
+       
+       const body = document.getElementById('bg');
+       const bgClor = function(){
+        body.style.background = randomColor();
+       };
+       let g; 
+       const startchange = function(){
+        g =  setInterval(bgClor,500);
+       }
+       
+        const stopchange = function(){
+                clearInterval(g);
+                g = null;
+            }
+        
+       
+        document.getElementById('change').addEventListener
+        ('click',startchange);
+
+        document.getElementById('stop').addEventListener
+        ('click',stopchange);
+    
+         console.log(randomColor());
+    </script>
+    <style>
+        
+/* CSS */
+#change {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#change:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  #change {
+    padding: 0.25em 0.75em;
+  }
+}
+#stop {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#stop:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  #stop {
+    padding: 0.25em 0.75em;
+  }
+}
+#head {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#head:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  #head {
+    padding: 0.25em 0.75em;
+  }
+}
+#bg {
+  display: flexbox;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+}
+   </style>
+       
+</body>
+</html>
